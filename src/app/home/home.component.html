@@ -8,24 +8,30 @@
   </mat-toolbar>
 
   <mat-accordion multi="false" >
+    <div *ngFor="let task of taskArr; index as i;">
 
+    
     <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            Task 01
+            Task {{i+1}}
           </mat-panel-title>
           <mat-panel-description>
-            Angular Course
+            <b>{{task.taskTitle}}</b>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>This is the panel content. Add course details</p>
-        <p>24/12/22</p>
-        <!-- <mat-action-row>
-          <button mat-button>Enroll</button>
-        </mat-action-row> -->
+        <div style="display: flex;flex-direction: row;align-items: center;">
+            <p style="margin-right: 16rem;color: black;font-weight: 400;font-size: 17px;">Description: </p> 
+          <p> {{task.taskDetails}}</p>
+   
+        </div>
+        <mat-action-row>
+               <h3>{{task.dueDate}}</h3>
+        
+        </mat-action-row>
       </mat-expansion-panel>
       
-
+    </div>
     </mat-accordion> 
 
 <div class="buttonDiv"  fxLayout="row" fxLayoutAlign="end end">

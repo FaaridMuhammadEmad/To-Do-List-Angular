@@ -8,11 +8,21 @@ import { ModalComponent } from '../modal/modal.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   taskArr:any=[
     {
-      title:'',
-
+      taskTitle:'Faarid',
+      taskDetails:'abc',
+      dueDate:'12/01/2020'
+    },
+    {
+      taskTitle:'Ali',
+      taskDetails:'def',
+      dueDate:'12/01/2020'
+    },
+    {
+      taskTitle:'Ahmed',
+      taskDetails:'gef',
+      dueDate:'12/01/2020'
     }
   ];
 
@@ -23,7 +33,9 @@ export class HomeComponent implements OnInit {
 
     openDialog(){
       const dialogRef = this.dialog.open(ModalComponent);
-
+     // dialogRef.componentInstance.emitService.subscribe((emmitedValue) => {
+        // do sth with emmitedValue
+  //  });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });

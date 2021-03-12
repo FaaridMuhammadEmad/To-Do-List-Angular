@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter, Output,Inject,InjectionToken } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-
+import { MatDialogRef } from '@angular/material/dialog';
+import { HomeComponent } from '../home/home.component';
+export declare const CUSTOM_DIALOG_DATA: InjectionToken<any>;
+export interface CancelDialogData {
+  name: string; // this can be any string;
+  Comments: string;
+}
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
@@ -10,14 +16,15 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ModalComponent implements OnInit {
   
   taskForm:any;
-  
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    public dialogRef: MatDialogRef<HomeComponent>,
+    @Inject(CUSTOM_DIALOG_DATA) public data: CancelDialogData) { }
 
   ngOnInit(): void {
     this.taskForm = this.fb.group({
-      taskName:['',Validators.required],
-      taskDetail:['',Validators.required],
-      dueDate:['',Validators.required]
+      taskName:['hello',Validators.required],
+      taskDetail:['asas',Validators.required],
+      dueDate:['2002/10/10']
     })
   }
 
@@ -32,7 +39,7 @@ export class ModalComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("SUBMIT", this.taskForm.value)
+    this.dialogRef.close();
   }
 
 }

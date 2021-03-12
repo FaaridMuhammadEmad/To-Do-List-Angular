@@ -1,7 +1,6 @@
 <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
   
     <div class="formDiv" fxLayout="column" >
-
       <mat-form-field floatLabel="auto" appearance="outline">
         <mat-label>Task Name</mat-label>
         <input matInput required [class.is-invalid]="taskName.touched" formControlName="taskName" type="text" class="form-control">
