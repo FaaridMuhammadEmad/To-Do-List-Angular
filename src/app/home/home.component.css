@@ -9,3 +9,15 @@
     background-color: #666;
     color: red;
   }
+.addButton{
+    background-color: rgb(18, 114, 179);
+    align-self: flex-end;
+}
+.buttonDiv{
+    /* background-color: crimson; */
+    margin-top: 15px;
+    margin-right: 15px;
+}
+.cardDiv{
+    
+}

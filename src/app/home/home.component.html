@@ -6,3 +6,32 @@
         <button class="navButton" mat-raised-button>About</button>
     </div>
   </mat-toolbar>
+
+  <mat-accordion multi="false" >
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Task 01
+          </mat-panel-title>
+          <mat-panel-description>
+            Angular Course
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>This is the panel content. Add course details</p>
+        <p>24/12/22</p>
+        <!-- <mat-action-row>
+          <button mat-button>Enroll</button>
+        </mat-action-row> -->
+      </mat-expansion-panel>
+      
+
+    </mat-accordion> 
+
+<div class="buttonDiv"  fxLayout="row" fxLayoutAlign="end end">
+    <button mat-fab class="addButton" type="submit" (click)="openDialog()">
+        <mat-icon color="white">add</mat-icon>
+    </button>
+</div>
+
+

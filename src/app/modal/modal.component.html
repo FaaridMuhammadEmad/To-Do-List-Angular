@@ -1,0 +1,24 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  
+    <div class="formDiv" fxLayout="column" >
+
+      <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Task Name</mat-label>
+        <input matInput required [class.is-invalid]="taskName.touched" formControlName="taskName" type="text" class="form-control">
+      </mat-form-field>
+    
+      <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Task Detail</mat-label>
+        <input matInput required [class.is-invalid]="taskName.touched" type="text" formControlName="taskDetail">
+      </mat-form-field>
+
+      <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Date</mat-label>
+        <input matInput required type="date" formControlName="dueDate">
+      </mat-form-field>
+      <button color="primary" type="submit" [disabled]="!taskForm.valid" mat-raised-button fxLayout="row" fxLayoutAlign="center end">
+          Submit
+      </button>
+  </div>
+</form>
+  
