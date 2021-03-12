@@ -1,0 +1,11 @@
+.navbar{
+    justify-content: space-between;
+    background-color: rgb(18, 114, 179);
+}
+.navButton{
+    margin-right: 3rem;    
+}
+.active, .btn:hover {
+    background-color: #666;
+    color: red;
+  }

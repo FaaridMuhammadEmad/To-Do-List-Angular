@@ -1,0 +1,68 @@
+<div class="mainDiv" fxLayout="column" fxLayoutAlign="center center">
+
+    <h2 style="color: blue;font-weight: bold;margin-top: 3rem;">To-Do Application</h2>
+   
+    <mat-tab-group dynamicHeight class="cardView">
+      <mat-tab label="Sign Up">
+        <div class="signUpDiv" fxLayout="column" >
+          <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput required>
+          </mat-form-field>
+        
+          <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput required>
+          </mat-form-field>
+        
+          <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput required>
+          </mat-form-field>
+        
+          <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput required>
+            <!-- <mat-hint>Min 8 characters</mat-hint> -->
+          </mat-form-field>
+        
+          <mat-form-field floatLabel="auto" hideRequiredMarker appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput required>
+          </mat-form-field>
+          <button color="primary" mat-raised-button>Submit</button>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Login">
+        <form [formGroup]="signinForm" (ngSubmit)="onSignin()">
+  
+          <div class="signUpDiv" fxLayout="column" >
+  
+            <mat-form-field floatLabel="auto" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput required [class.is-invalid]="email.invalid && email.touched" formControlName="email" type="text" class="form-control">
+            </mat-form-field>
+          
+            <mat-form-field floatLabel="auto" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput required type="password" formControlName="password">
+              <!-- <mat-hint>Min 5 characters</mat-hint> -->
+            </mat-form-field>
+            <button color="primary" type="submit" mat-raised-button fxLayout="row" fxLayoutAlign="center end">
+                Submit
+            </button>
+        </div>
+      </form>
+  
+      </mat-tab>
+    </mat-tab-group>
+    <!-- <div *ngIf="navigateToHome"> -->
+        
+    <!-- </div> -->
+  <!-- <nav>
+            <a routerLink="/home" routerLinkActive="active"> </a>
+          </nav> -->
+  </div>
+  
+  
