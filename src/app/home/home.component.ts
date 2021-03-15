@@ -10,18 +10,18 @@ import { ModalComponent } from '../modal/modal.component';
 export class HomeComponent implements OnInit {
   taskArr:any=[
     {
-      taskTitle:'Faarid',
-      taskDetails:'abc',
+      taskName:'Faarid',
+      taskDetail:'This is my task',
       dueDate:'12/01/2020'
     },
     {
-      taskTitle:'Ali',
-      taskDetails:'def',
+      taskName:'Ali',
+      taskDetail:'asdad sdsddsdds adssdss assda sada',
       dueDate:'12/01/2020'
     },
     {
-      taskTitle:'Ahmed',
-      taskDetails:'gef',
+      taskName:'Ahmed',
+      taskDetail:'gef',
       dueDate:'12/01/2020'
     }
   ];
@@ -33,13 +33,15 @@ export class HomeComponent implements OnInit {
 
     openDialog(){
       const dialogRef = this.dialog.open(ModalComponent);
-     // dialogRef.componentInstance.emitService.subscribe((emmitedValue) => {
-        // do sth with emmitedValue
-  //  });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result.data.taskName}`);
+      this.taskArr.push(result.data)
+
     });
   }
   
+  deleteTask(i:any){
+    this.taskArr.splice(i, 1);  
+  }
 
 }

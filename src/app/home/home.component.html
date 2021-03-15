@@ -17,17 +17,21 @@
             Task {{i+1}}
           </mat-panel-title>
           <mat-panel-description>
-            <b>{{task.taskTitle}}</b>
+            <b>{{task.taskName}}</b>
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div style="display: flex;flex-direction: row;align-items: center;">
-            <p style="margin-right: 16rem;color: black;font-weight: 400;font-size: 17px;">Description: </p> 
-          <p> {{task.taskDetails}}</p>
+            <p style="margin-right: 23.5rem;color: gray;font-weight: 500;font-size: 15px;">Description: </p> 
+          <p style="color: gray;font-weight: 500;"> {{task.taskDetail}}</p>
    
         </div>
-        <mat-action-row>
-               <h3>{{task.dueDate}}</h3>
-        
+        <div style="display: flex;flex-direction: row;align-items: center;">
+          <p style="margin-right: 24.5rem;color: gray ;font-weight: 500;font-size: 15px;">Due Date: </p> 
+          <p style="color: gray; font-weight: 500;">{{task.dueDate}}</p>
+ 
+      </div>
+        <mat-action-row>       
+          <button mat-button  type="submit" (click)="deleteTask(i)">Delete</button>
         </mat-action-row>
       </mat-expansion-panel>
       
